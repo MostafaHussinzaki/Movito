@@ -1,0 +1,1 @@
+{"mappings":"","sources":["assets/scss/style.scss"],"sourcesContent":["@forward 'abstracts';\r\n@forward 'base';\r\n@forward 'components';\r\n@forward 'layouts';\r\n@forward 'pages';"],"names":[],"version":3,"file":"index.55517108.css.map","sourceRoot":"/__parcel_source_root/"}
