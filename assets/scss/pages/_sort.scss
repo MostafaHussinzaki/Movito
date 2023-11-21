@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.sorts {
+    margin-bottom: F.toem(80);
+	h1 {
+        // font-size: V.$fs-700;
+        font-weight: V.$fw-700;
+		color: V.$white;
+        padding: F.toem(10);
+	}
+
+	.movies {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		padding: F.toem(10);
+		@include M.respond-up(V.$large-screen) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@include M.respond-up(V.$medium-screen) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (max-width: 375px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+    &__btn {
+        @include M.Centerhorizontal()
+    }
+}

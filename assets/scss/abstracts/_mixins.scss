@@ -1,0 +1,81 @@
+@use 'variables' as V;
+@use 'functions' as F;
+
+// star and dirextor
+@mixin stars-director() {
+	width: 75%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: F.toem(10);
+	h3 {
+		color: V.$text-color;
+		width: 20%;
+	}
+
+	p {
+		color: V.$white;
+		width: 80%;
+		padding-left: F.toem(5);
+	}
+}
+
+// flex qit
+
+@mixin flex-row-between {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+// Center
+
+@mixin Center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin Centerhorizontal() {
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+// cover background
+
+@mixin cover-background {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+// border radius
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+}
+
+// media querys
+
+@mixin respond-up($size) {
+	@if $size == V.$small-screen {
+		@media (max-width: V.$small-screen) {
+			@content;
+		}
+	}
+
+	@if $size == V.$medium-screen {
+		@media (max-width: V.$medium-screen) {
+			@content;
+		}
+	}
+
+	@if $size == V.$large-screen {
+		@media (max-width: V.$large-screen) {
+			@content;
+		}
+	}
+}

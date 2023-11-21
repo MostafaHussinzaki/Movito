@@ -1,0 +1,53 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+
+.hidden {
+	display: none !important;
+}
+
+.hidden-width {
+	width: 0%;
+}
+
+
+// rating
+
+.rates {
+	background-color: V.$white-alpha-20;
+	color: V.$white;
+	font-weight: V.$fw-600;
+	border-radius: V.$radius-4;
+	font-size: V.$fs-200;
+	padding: F.toem(1) F.toem(3) F.toem(1) F.toem(3);
+}
+
+// separator line
+.separator {
+	display: inline-block;
+	width: 100%;
+	height: 1px;
+	background-color: V.$banner-background;
+}
+
+/* background colors */
+
+.main-bg {
+	background-color: V.$background;
+}
+
+.banner-bg {
+	background-color: V.$banner-background;
+}
+
+/* Font colors */
+
+.fc-light {
+	color: V.$on-background;
+}
+.fc-gray {
+	color: V.$text-color;
+}
+.fc-white {
+	color: V.$white;
+}
+

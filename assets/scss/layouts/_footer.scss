@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.footer {
+    padding: F.toem(40) 0 F.toem(40) F.toem(40);
+
+    @include M.respond-up(V.$small-screen) {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+    }
+    p {
+        color: V.$text-color;
+        padding-bottom: F.toem(20);
+
+        @include M.respond-up(V.$small-screen) {
+            text-align: center;
+        }
+    }
+
+    img {
+        width: F.torem(80);
+        z-index: 20;
+        @include M.respond-up(V.$small-screen) {
+            align-items: center;
+        }
+    }
+}

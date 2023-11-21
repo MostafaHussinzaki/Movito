@@ -1,0 +1,146 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/mixins' as M;
+
+* {
+	font-family: V.$ff-dm-sans;
+}
+
+.header,
+.header--active {
+	font-size: V.$fs-normal;
+
+	@include M.respond-up(V.$medium-screen) {
+		// font-size: V.$fs-400;
+		font-size: V.$fs-350;
+	}
+
+	@include M.respond-up(V.$small-screen) {
+		font-size: V.$fs-200;
+	}
+}
+
+.navigation {
+	h2 {
+		font-size: V.$fs-500;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-600;
+		}
+	}
+	ul {
+		font-size: V.$fs-400;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-500;
+		}
+	}
+}
+
+.footer {
+	p {
+		font-size: V.$fs-350;
+	}
+}
+
+.poster-img {
+	font-size: V.$fs-normal;
+	@include M.respond-up(V.$medium-screen) {
+		font-size: V.$fs-350;
+	}
+}
+
+main {
+	font-size: V.$fs-normal;
+	@include M.respond-up(V.$small-screen) {
+		font-size: V.$fs-200;
+	}
+}
+
+.banner__curr-movie {
+	&__title {
+		font-size: V.$fs-800;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-700;
+		}
+	}
+
+	&__info {
+		font-size: V.$fs-400;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-350;
+		}
+	}
+
+	&__genre {
+		font-size: V.$fs-400;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-350;
+		}
+	}
+
+	&__description {
+		font-size: V.$fs-400;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-350;
+		}
+	}
+}
+
+.sliders {
+	h1 {
+		font-size: 1.5rem;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-600;
+		}
+	}
+}
+
+.sorts {
+	h1 {
+		font-size: V.$fs-700;
+		@include M.respond-up(V.$small-screen) {
+			font-size: V.$fs-600;
+		}
+	}
+}
+
+.selected-movie {
+	&__details {
+		&__img {
+		}
+
+		&__info {
+			&__title {
+				font-size: V.$fs-800;
+				@include M.respond-up(V.$medium-screen) {
+					font-size: V.$fs-700;
+				}
+			}
+
+			&__numbers {
+				font-size: V.$fs-normal;
+				@include M.respond-up(V.$medium-screen) {
+					font-size: V.$fs-200;
+				}
+			}
+
+			&__description {
+				font-size: V.$fs-400;
+				@include M.respond-up(V.$medium-screen) {
+					font-size: V.$fs-350;
+				}
+			}
+
+			&__videos {
+			}
+		}
+	}
+
+	&__suggestion {
+	}
+}
+
+/*				
+	
+
+
+
+*/

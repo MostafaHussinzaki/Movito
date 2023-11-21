@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.sliders {
+	width: 100%;
+	margin: F.toem(25) 0;
+	h1 {
+		color: V.$white;
+		font-weight: V.$fw-600;
+	}
+
+	.slider {
+		margin-top: F.toem(20);
+		white-space: nowrap;
+		overflow-x: scroll;
+	}
+}
+
+// need some fixing
+.slider-small {
+    position: relative;
+    z-index: 3;
+    white-space: nowrap;
+    overflow-x: scroll;
+    margin-left: 60%;
+    @include M.respond-up(V.$large-screen) {
+        position: absolute;
+        bottom: -5px;
+    }
+    @include M.respond-up(V.$medium-screen) {
+        position: relative;
+    }
+    @include M.respond-up(V.$small-screen) {
+        margin-left: 0;
+    }
+}

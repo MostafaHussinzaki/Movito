@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+/* sidebar styling*/
+.sidebar {
+	position: -webkit-sticky; /* Safari & IE */
+	position: sticky;
+	top: 0;
+	grid-column: span 2;
+	background-color: V.$background;
+	// fix the scroll in side bar
+	height: 100vh;
+	overflow: scroll;
+	transition: V.$transition-long transform;
+
+	@include M.respond-up(V.$large-screen) {
+		position: fixed;
+		width: 30%;
+		transform: translateX(-100%);
+		z-index: 5;
+	}
+
+	.navigation {
+		padding-bottom: F.toem(40);
+		padding-left: F.toem(40);
+		h2 {
+			color: V.$white;
+			font-weight: V.$fw-600;
+			margin: F.toem(15) 0 F.toem(10);
+
+			@include M.respond-up(V.$small-screen) {
+				text-align: center;
+			}
+		}
+
+		ul {
+			a {
+				li {
+					color: V.$text-color;
+					padding: F.toem(10) 0 0;
+					letter-spacing: 1.2px;
+					cursor: pointer;
+
+					@include M.respond-up(V.$small-screen) {
+						text-align: center;
+					}
+
+					&:hover {
+						color: V.$white;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* when click in menu btn */
+.sidebar--active {
+	@include M.respond-up(V.$large-screen) {
+		transform: translateX(0);
+	}
+
+	@include M.respond-up(V.$small-screen) {
+		transform: translateY(-13px);
+		width: 100%;
+	}
+}

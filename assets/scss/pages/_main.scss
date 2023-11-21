@@ -1,0 +1,111 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+body {
+	background-color: V.$surface;
+
+	@include M.respond-up(V.$medium-screen) {
+		margin-right: 20px;
+	}
+}
+
+.body {
+	padding-top: F.toem(80);
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	@include M.respond-up(V.$large-screen) {
+		padding-top: F.toem(73);
+	}
+	@include M.respond-up(V.$small-screen) {
+		padding-top: F.toem(50);
+	}
+}
+
+main {
+	grid-column: span 8;
+	background-color: V.$surface;
+	border-radius: V.$radius-24;
+	padding: F.toem(20) 0 0 F.toem(15);
+	@include M.respond-up(V.$large-screen) {
+		border-radius: 0;
+		grid-column: span 10;
+	}
+
+	.banner {
+		padding: F.toem(40) 0 F.toem(20) F.toem(60);
+		margin-right: F.toem(15);
+		position: relative;
+		border-radius: V.$radius-36;
+		background-image: url(../images/slider-banner.jpg);
+		box-shadow: V.$shadow-1;
+		z-index: 1;
+		overflow: hidden;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(V.$banner-overlay);
+			z-index: 2;
+			border-radius: V.$radius-36;
+		}
+
+		@include M.cover-background();
+
+		&__curr-movie {
+			width: 60%;
+			position: relative;
+			z-index: 3;
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			@include M.respond-up(V.$large-screen) {
+				padding-bottom: 80px;
+			}
+			@include M.respond-up(V.$medium-screen) {
+				padding-bottom: 0px;
+			}
+			@include M.respond-up(V.$small-screen) {
+				width: 85%;
+			}
+
+			&__title {
+				color: V.$white;
+				font-weight: V.$fw-700;
+			}
+
+			&__info {
+				padding: F.toem(5) 0;
+				display: flex;
+				justify-content: flex-start;
+				&__date {
+					padding-right: F.toem(5);
+					color: V.$text-color;
+				}
+
+				&__rate {
+					align-self: center;
+				}
+			}
+
+			&__genre {
+				color: V.$text-color;
+				padding: F.toem(10) 0;
+			}
+
+			&__description {
+				color: V.$text-color;
+				padding: F.toem(10) 0;
+			}
+		}
+	}
+	.slider {
+		a {
+			width: F.toem(180);
+		}
+	}
+}

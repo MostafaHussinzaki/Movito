@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.header {
+	position: fixed;
+	background-color: V.$background;
+	@include M.flex-row-between();
+	padding: F.toem(10) F.toem(40) F.toem(25);
+	width: 100%;
+	z-index: 100;
+
+    &__logo {
+        @include M.respond-up(V.$small-screen) {
+            min-width: 130px;
+            width: 35%;
+        }
+    }
+
+	&__option {
+		width: 25%;
+		display: flex;
+		justify-content: flex-end;
+
+		@include M.respond-up(V.$large-screen) {
+			width: 36%;
+		}
+
+		&__search-btn {
+			display: none;
+
+			@include M.respond-up(V.$medium-screen) {
+				display: block;
+			}
+		}
+
+		&__close-search-btn {
+			display: none;
+		}
+
+		&__search-bar {
+			position: relative;
+			overflow-y: hidden;
+			width: 100%;
+
+			img {
+				position: absolute;
+				max-width: F.toem(30);
+				top: 6px;
+				left: 7px;
+				filter: brightness(0.5);
+				transition: V.$transition-short all;
+			}
+
+			input {
+				padding: F.toem(10) F.toem(10) F.toem(10) F.toem(40);
+				color: V.$white;
+				width: 100%;
+				border: none;
+				outline: none;
+				height: 95%;
+				border-radius: V.$radius-8;
+				background-color: V.$white-alpha-20;
+				transition: V.$transition-short all;
+
+
+				&::placeholder {
+					color: V.$text-color;
+				}
+
+				&:focus {
+					border: 1px solid V.$white;
+					padding: F.toem(10);
+				}
+			}
+
+			@include M.respond-up(V.$medium-screen) {
+				display: none;
+			}
+		}
+
+		&__open-menu-btn {
+			display: none;
+			@include M.respond-up(V.$large-screen) {
+				display: block;
+			}
+		}
+
+		&__close-menu-btn {
+			display: none;
+			@include M.respond-up(V.$large-screen) {
+				display: block;
+			}
+		}
+	}
+}
+
+
+
+/* when click in search button */
+.header--active {
+
+    .header__logo {
+        display: none;
+    }
+
+    .header__option{
+		width: 100%;
+		padding: F.toem(10) F.toem(40) F.toem(25);
+
+        .header__option__search-btn{
+            display: none;
+        }
+
+        .header__option__close-search-btn{
+            display: block;
+
+        }
+        .header__option__search-bar{
+			margin-right: F.toem(5);
+            display: block;
+        }
+        .header__option__open-menu-btn{
+            display: none;
+        }
+        .header__option__close-menu-btn {
+            display: none;
+        }
+    }
+
+}

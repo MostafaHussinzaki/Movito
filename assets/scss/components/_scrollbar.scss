@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as V;
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: V.$white-alpha-20;
+	border-radius: V.$radius-24;
+}
+
+.sidebar {
+	&::-webkit-scrollbar-thumb {
+		background: none;
+	}
+
+	&:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+		background: V.$white-alpha-20;
+	}
+	&::-webkit-scrollbar-corner {
+		background: none;
+	}
+}
+
+.banner__slider {
+	&::-webkit-scrollbar-thumb {
+		background: none;
+	}
+}
+
+
+.slider {
+	&::-webkit-scrollbar-thumb {
+		background: none;
+	}
+
+	&:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+		background: V.$white-alpha-20;
+	}
+	&::-webkit-scrollbar-corner {
+		background: none;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		height: 6px;
+	}
+}
+
+.selected-movie__details__info__videos__slider {
+	&::-webkit-scrollbar-thumb {
+		background: none;
+	}
+
+	&:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+		background: V.$white-alpha-20;
+	}
+	&::-webkit-scrollbar-corner {
+		background: none;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		height: 6px;
+	}
+}

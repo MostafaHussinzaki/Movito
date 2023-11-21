@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+// function convert pixels into rems with considration that 1rem = 16px
+
+@function torem($px) {
+    @if math.is-unitless($px) {
+        @return  math.div($px, 16) + rem;
+    }
+    @else {
+        @error 'remove the "unit"';
+    }
+}
+
+// function convert pixels into ems with considration that 1em = 16px -> with ems things
+
+@function toem($px) {
+    @if math.is-unitless($px) {
+        @return  math.div($px, 16) + em;
+    }
+    @else {
+        @error 'remove the "unit"';
+    }
+}

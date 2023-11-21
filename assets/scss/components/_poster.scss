@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.poster-img {
+	display: inline-block;
+	margin-right: F.toem(20);
+	filter: brightness(0.5);
+	transition: V.$transition-short all;
+	&:hover {
+		filter: brightness(1);
+	}
+
+	img {
+		width: F.toem(100);
+		height: auto;
+		border-radius: V.$radius-24;
+	}
+
+	&--active {
+		border: 2px V.$primary-variant solid;
+		border-radius: V.$radius-24;
+		filter: brightness(1);
+	}
+}
+
+.poster {
+	display: inline-block;
+	// width: F.toem(180);
+	padding-bottom: F.toem(10);
+    margin-right: F.toem(10);
+	img {
+		border-radius: V.$radius-24;
+	}
+
+	h2 {
+		font-size: V.$fs-500;
+		color: V.$white;
+		font-weight: V.$fw-600;
+		padding-top: F.toem(5);
+	}
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		padding-top: F.toem(5);
+		align-items: center;
+
+		.rate {
+			width: 10%;
+			display: flex;
+			align-items: center;
+			color: V.$white;
+		}
+		.date {
+			color: V.$white;
+		}
+	}
+
+    font-size: V.$fs-normal;
+    @include M.respond-up(V.$medium-screen) {
+		font-size: V.$fs-350;
+	}
+}

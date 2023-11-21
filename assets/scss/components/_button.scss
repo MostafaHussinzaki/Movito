@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as V;
+@use '../abstracts/functions' as F;
+@use '../abstracts/mixins' as M;
+
+.gray-btn {
+	width: F.toem(45);
+	height: F.toem(45);
+	padding: F.toem(10);
+	background-color: V.$white-alpha-20;
+	border-radius: V.$radius-8;
+	cursor: pointer;
+	filter: brightness(0.8);
+}
+
+.dark-btn {
+	background-color: V.$background;
+	width: F.toem(45);
+	height: F.toem(45);
+	padding: F.toem(10);
+	cursor: pointer;
+}
+
+.watch-btn {
+	// for now
+	font-size: V.$fs-350;
+	@include M.respond-up(V.$small-screen) {
+		font-size: V.$fs-200;
+	}
+	// 
+	width: fit-content;
+	color: V.$white;
+	background-color: V.$primary;
+	padding: F.toem(10) F.toem(15);
+	max-width: 150px;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: V.$radius-8;
+
+	img {
+		width: F.toem(25);
+		height: F.toem(25);
+		margin-right: F.toem(5);
+	}
+}

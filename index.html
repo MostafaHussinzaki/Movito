@@ -1,16 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Movie</title>
 
-    <link rel="stylesheet" href="./assets/scss/style.scss">
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <script defer type="module" src="./assets/js/controller.js"></script>
-</head>
-<body>
-    <p>lol</p>
-</body>
+		<!-- css -->
+		<link rel="stylesheet" href="./assets/scss/style.scss" />
+
+		<!-- javascript -->
+		<script defer type="module" src="./assets/js/controller.js"></script>
+		<script defer src="./assets/js/style.js"></script>
+	</head>
+	<body class="">
+		<header class="header">
+			<!-- the Logo -->
+			<a href="#" class="header__logo">
+				<img src="./assets/images/logo.png" alt="Logo" />
+			</a>
+
+			<!-- search bar & search buttons & menu buttons  -->
+			<div class="header__option">
+				<!-- open search bar button -->
+				<div class="header__option__search-btn | gray-btn">
+					<img src="./assets/images/search.png" alt="open search box" />
+				</div>
+
+				<!-- search bar -->
+				<div class="header__option__search-bar">
+					<img
+						src="./assets/images/search.png"
+						alt="search"
+						class="header__option__search-bar__img"
+					/>
+					<input
+						type="text"
+						placeholder="Search any movies..."
+						class="header__option__search-bar__input"
+					/>
+				</div>
+
+				<!-- close search bar button -->
+				<div class="header__option__close-search-btn | gray-btn">
+					<img src="./assets/images/close.png" alt="close search box" />
+				</div>
+
+				<!-- open menu button -->
+				<div class="header__option__open-menu-btn | dark-btn">
+					<img src="./assets/images/menu.png" alt="open menu" />
+				</div>
+
+				<!-- close menu button -->
+				<div class="header__option__close-menu-btn | dark-btn hidden">
+					<img src="./assets/images/menu-close.png" alt="close menu" />
+				</div>
+			</div>
+		</header>
+		<div class="body">
+			<aside class="sidebar">
+				<nav class="navigation">
+					<h2>Genre</h2>
+					<ul>
+						<!-- will git them from API -->
+						<a href="#"><li>Adventure</li></a>
+						<a href="#"><li>Fantasy</li></a>
+						<a href="#"><li>Animation</li></a>
+						<a href="#"><li>Drama</li></a>
+						<a href="#"><li>Horror</li></a>
+						<a href="#"><li>Action</li></a>
+						<a href="#"><li>Comedy</li></a>
+						<a href="#"><li>History</li></a>
+						<a href="#"><li>Western</li></a>
+						<a href="#"><li>Thriller</li></a>
+						<a href="#"><li>Crime</li></a>
+						<a href="#"><li>Documentary</li></a>
+						<a href="#"><li>Science Fiction</li></a>
+						<a href="#"><li>Mystery</li></a>
+						<a href="#"><li>Music</li></a>
+						<a href="#"><li>Romance</li></a>
+						<a href="#"><li>Family</li></a>
+						<a href="#"><li>War</li></a>
+						<a href="#"><li>TV Movie</li></a>
+					</ul>
+				</nav>
+				<span class="separator"></span>
+				<footer class="footer">
+					<p>Copyrights design from codewithsade, code Mostafa hussin</p>
+					<img src="./assets/images/tmdb-logo.png" alt="Tmdb logo" />
+				</footer>
+			</aside>
+			<main>
+				<div class="first">
+					<section class="banner">
+						<div class="banner__curr-movie">
+							<h1 class="banner__curr-movie__title">
+								Puss in boost: the last Wish
+							</h1>
+							<div class="banner__curr-movie__info">
+								<div class="banner__curr-movie__info__date">2022</div>
+								<div class="banner__curr-movie__info__rate | rates">8.5</div>
+							</div>
+							<div class="banner__curr-movie__genre">
+								<p>Animation, Action, Adventure</p>
+							</div>
+							<div class="banner__curr-movie__description">
+								<p>
+									Puss in Boots discovers that his passion for adventure has taken
+									its toll: He has burned through eight of his nine lives
+								</p>
+							</div>
+
+							<a href="#" class="banner__curr-movie__button | watch-btn">
+								<img src="./assets/images/play_circle.png" alt="Watch now" />
+								<span>Watch now</span>
+							</a>
+						</div>
+						<div class="banner__slider | slider-small">
+							<a
+								href="#"
+								class="banner__slider__poster | poster-img poster-img--active"
+							>
+								<img src="./assets/images/slider-control.jpg" alt="" />
+							</a>
+							<a href="#" class="banner__slider__poster | poster-img">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+							</a>
+							<a href="#" class="banner__slider__poster | poster-img">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+							</a>
+							<a href="#" class="banner__slider__poster | poster-img">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+							</a>
+							<a href="#" class="banner__slider__poster | poster-img">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+							</a>
+						</div>
+					</section>
+					<section class="weekly-trending | sliders">
+						<h1>Weekly Trending Movies</h1>
+						<div class="| slider">
+							<a class=" | poster" href="#">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+								<h2>Movie title</h2>
+								<div class="">
+									<span class="rate"
+										><img src="./assets/images/star.png" alt="" />8.5</span
+									>
+									<span class="date | rates">2022</span>
+								</div>
+							</a>
+						</div>
+					</section>
+					<section class="top-rated | sliders">
+						<h1>Top Rated Movies</h1>
+						<div class="| slider">
+							<a class=" | poster" href="#">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+								<h2>Movie title</h2>
+								<div class="">
+									<span class="rate"><img src="./assets/images/star.png" alt="" />8.5</span>
+									<span class="date | rates">2022</span>
+								</div>
+							</a>
+					</section>
+					<section class="up-coming | sliders">
+						<h1>Upcoming Movies</h1>
+						<div class="| slider">
+							<a class=" | poster" href="#">
+								<img src="./assets/images/slider-control.jpg" alt="" />
+								<h2>Movie title</h2>
+								<div class="">
+									<span class="rate"><img src="./assets/images/star.png" alt="" />8.5</span>
+									<span class="date | rates">2022</span>
+								</div>
+							</a>
+					</section>
+				</div>
+
+				<!-- <div class="sorts">
+					<h1>All Animation Movie</h1>
+					<div class="movies">
+						<a class="| poster" href="#">
+							<img src="./assets/images/slider-control.jpg" alt="" />
+							<h2>Movie title</h2>
+							<div class="">
+								<span class="rate"
+									><img src="./assets/images/star.png" alt="" />8.5</span
+								>
+								<span class="date | rates">2022</span>
+							</div>
+						</a>
+					</div>
+					<a href="#" class="sorts__btn | watch-btn">
+						<span>Learn more</span>
+					</a>
+				</div> -->
+
+				<!-- <div class="selected-movie">
+					<div class="selected-movie__details">
+						<div class="selected-movie__details__img | poster">
+							<img src="./assets/images/slider-control.jpg" alt="poster" />
+						</div>
+						<div class="selected-movie__details__info">
+							<div class="selected-movie__details__info__title">
+								<h1>Puss in Boots: The Last Wish</h1>
+							</div>
+							<div class="selected-movie__details__info__numbers">
+								<span class="rate"
+									><img src="./assets/images/star.png" alt="" />8.5</span
+								>
+								<span class="dot">.</span>
+								<span class="duration">162m</span>
+								<span class="dot">.</span>
+								<span class="date">2022</span>
+								<span class="dot">.</span>
+								<span class="classify | rates">PG-13</span>
+							</div>
+							<div class="selected-movie__details__info__description">
+								<div class="genres"><p>Animation, Action, Adventure</p></div>
+								<div class="summary">
+									<p>
+										Puss in Boots discovers that his passion for adventure has
+										taken its toll: He has burned through eight of his nine
+										lives, leaving him with only one life left. Puss sets out on
+										an epic journey to find the mythical Last Wish and restore
+										his nine lives.
+									</p>
+								</div>
+								<div class="stars">
+									<h3>Starring</h3>
+									<p>
+										Letitia Wright, Lupita Nyong'o, Danai Gurira, Winston Duke,
+										Dominique Thorne, Tenoch Huerta Mejía, Angela Bassett,
+										Florence Kasumba, Michaela Coel, Mabel Cadena
+									</p>
+								</div>
+								<div class="director">
+									<h3>Directed By</h3>
+									<p>Ryan Coogler</p>
+								</div>
+							</div>
+							<div class="selected-movie__details__info__videos">
+								<h2>Trailers and Clips</h2>
+								<div class="selected-movie__details__info__videos__slider |">
+									<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+									</iframe>
+									<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+									</iframe>
+									<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+									</iframe>
+									<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+									</iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="selected-movie__suggestion">
+						<div class="selected-movie__suggestion__slider | sliders">
+							<h1>You May Also Like</h1>
+							<div class="| slider">
+								<a class="| poster" href="#">
+									<img src="./assets/images/slider-control.jpg" alt="" />
+									<h2>Movie title</h2>
+									<div class="">
+										<span class="rate"
+											><img src="./assets/images/star.png" alt="" />8.5</span
+										>
+										<span class="date | rates">2022</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</main>
+		</div>
+	</body>
 </html>

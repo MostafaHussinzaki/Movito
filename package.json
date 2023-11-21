@@ -5,7 +5,8 @@
   "scripts": {
     "build": "parcel build index.html --dist-dir ./dist",
     "cleanup": "rmdir /q /s .parcel-cache dist || echo 'no cached files'",
-    "start": "npm run cleanup && parcel ./index.html"
+    "start": "npm run cleanup && parcel ./index.html",
+    "s": "parcel index.html && parcel watch index.html"
   },
   "author": "Mostafa Hussin",
   "license": "ISC",
