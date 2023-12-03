@@ -51,3 +51,14 @@
 	color: V.$white;
 }
 
+.error {
+	font-size: 26px;
+	margin: auto;
+	color: V.$text-color;
+	p {
+		span {
+			padding-right: 10px;
+			color: red;
+		}
+	}
+}

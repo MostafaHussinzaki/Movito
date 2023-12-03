@@ -13,7 +13,7 @@
 	// border-radius: V.$radius-36;
 
 	&__details {
-		background-image: url(../images/slider-banner.jpg);
+		// background-image: url(../images/slider-banner.jpg);
 		@include M.cover-background();
 		position: relative;
 		z-index: 3;

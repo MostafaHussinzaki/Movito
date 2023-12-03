@@ -253,6 +253,17 @@ main {
   color: #fff;
 }
 
+.error {
+  color: #959499;
+  margin: auto;
+  font-size: 26px;
+}
+
+.error p span {
+  color: red;
+  padding-right: 10px;
+}
+
 .gray-btn {
   cursor: pointer;
   filter: brightness(.8);
@@ -373,6 +384,7 @@ main {
 }
 
 .poster-img img {
+  cursor: pointer;
   border-radius: 24px;
   width: 6.25em;
   height: auto;
@@ -510,6 +522,7 @@ main {
 }
 
 .header__option__close-search-btn {
+  margin-left: 10px;
   display: none;
 }
 
@@ -565,17 +578,7 @@ main {
   }
 }
 
-.header__option__close-menu-btn {
-  display: none;
-}
-
-@media (width <= 64em) {
-  .header__option__close-menu-btn {
-    display: block;
-  }
-}
-
-.header--active .header__logo {
+.header__option__close-menu-btn, .header--active .header__logo {
   display: none;
 }
 
@@ -656,14 +659,14 @@ main {
 
 @media (width <= 64em) {
   .sidebar--active {
-    transform: translateX(0);
+    transform: translateX(0)translateY(60px);
   }
 }
 
 @media (width <= 37.5em) {
   .sidebar--active {
     width: 100%;
-    transform: translateY(-13px);
+    transform: translateY(55px);
   }
 }
 
@@ -711,6 +714,12 @@ body {
   }
 }
 
+@media (width <= 37.5em) {
+  body {
+    padding-right: 0;
+  }
+}
+
 .body {
   grid-template-columns: repeat(10, 1fr);
   padding-top: 5em;
@@ -740,12 +749,12 @@ main {
   main {
     border-radius: 0;
     grid-column: span 10;
+    padding-right: 0;
   }
 }
 
 main .banner {
   z-index: 1;
-  background-image: url("slider-banner.d48083e9.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -840,7 +849,6 @@ main .slider a {
 
 .selected-movie__details {
   z-index: 3;
-  background-image: url("slider-banner.d48083e9.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

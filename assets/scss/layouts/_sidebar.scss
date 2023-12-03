@@ -58,11 +58,11 @@
 /* when click in menu btn */
 .sidebar--active {
 	@include M.respond-up(V.$large-screen) {
-		transform: translateX(0);
+		transform: translateX(0) translateY(60px);
 	}
 
 	@include M.respond-up(V.$small-screen) {
-		transform: translateY(-13px);
+		transform: translateY(55px);
 		width: 100%;
 	}
 }

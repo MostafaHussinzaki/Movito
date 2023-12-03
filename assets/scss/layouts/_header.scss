@@ -35,6 +35,7 @@
 		}
 
 		&__close-search-btn {
+			margin-left: 10px;
 			display: none;
 		}
 
@@ -89,7 +90,7 @@
 		&__close-menu-btn {
 			display: none;
 			@include M.respond-up(V.$large-screen) {
-				display: block;
+				// display: block;
 			}
 		}
 	}

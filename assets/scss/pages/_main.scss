@@ -8,6 +8,9 @@ body {
 	@include M.respond-up(V.$medium-screen) {
 		margin-right: 20px;
 	}
+	@include M.respond-up(V.$small-screen) {
+		padding-right: 0;
+	}
 }
 
 .body {
@@ -28,6 +31,7 @@ main {
 	border-radius: V.$radius-24;
 	padding: F.toem(20) 0 0 F.toem(15);
 	@include M.respond-up(V.$large-screen) {
+		padding-right: 0;
 		border-radius: 0;
 		grid-column: span 10;
 	}
@@ -37,7 +41,6 @@ main {
 		margin-right: F.toem(15);
 		position: relative;
 		border-radius: V.$radius-36;
-		background-image: url(../images/slider-banner.jpg);
 		box-shadow: V.$shadow-1;
 		z-index: 1;
 		overflow: hidden;
